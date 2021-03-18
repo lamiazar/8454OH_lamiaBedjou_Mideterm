@@ -2,77 +2,117 @@
 
 Why do we need data structure?
 Answer:
+Data structures are essential for the efficient managing, storing, organizing and using large (and potentially increasing) amounts of information.
 
 What are the various operations that can be performed on different data structures?
 Answer:
+The basic operations that we can perform on data structures are:
+Insertion/Sorting/Merging/Deletion/Searching.
 
 When would we use data structures in the real world?
 Answer:
+Data structure is applied in all disciplines of software development.
+best examples :
+Queue Data Structure while Boarding a Bus.
+Graph Data Structure in Social Media and Google Map.
+Stack Data Structure to Reverse a String.
 
 What is an Array?
 Answer:
+An array is a group of like-typed variables that are referred to by a common name.
 
 What is the difference between Array and ArrayList?
 Answer:
+Array is a fixed length data structure whereas ArrayList is a dynamic length Collection class.
+We cannot store primitives in ArrayList, it can only store objects. But array can contain both primitives and objects.
 
 What is a LinkedList?
 Answer:
+Linked List is a sequence of links which contains items. Each link contains a connection to another link.
 
 How is an Array different from LinkedList?
 Answer:
+An array is a collection of elements of a similar data type.
+Linked List is an ordered collection of elements of the same type in which each element is connected to the next using pointers.
+Size of the array must be specified at the time of array declaration.
+Size of a Linked list grows/shrinks when new elements are inserted/deleted.
 
 What is a Queue?
 Answer:
+Is a data structure designed to have elements inserted at the end of the queue, and elements removed from the beginning of the queue.
 
 What is a Stack (not Java memory - refers to data structure)?
 Answer:
+Stacks are dynamic data structures that follow the Last In First Out (LIFO) principle.
 
 What is FIFO and LIFO?
 Answer:
+FIFO stands for for first in, first out. It is a method for handling data structures where the first element is processed first and the newest element is processed last.
+LIFO stands for Last in, first out .It is a a method for handling data structures where the last element is processed first and the first element is processed last.
 
 Explain Big O Notation?
 Answer:
+Big O Notation is the language we use for talking about how long an algorithm takes to run. It is how we compare the efficiency of different approaches to a problem. With Big O Notation we express the runtime in terms of — how quickly it grows relative to the input, as the input gets larger .
 
 What is the best case to search an element from an array?
 Answer:
+The best case is when the value is equal to the first element of the list, in which case only one comparison is needed.
 
 What is the worst case to search an element from an array?
 Answer:
+The worst case is when the value is not in the list, in which case n comparisons are needed.
 
 Describe what a tree data structure is?
 Answer:
+A tree is a hierarchical data structure which can represent relationships between different nodes.
+The tree data structure has roots, branches and leaves, but it is drawn upside-down.
 
 Describe what a graph data structure is?
 Answer:
+Can be termed as a data structure consisting of data that is stored among many groups of edges(paths) and vertices (nodes), which are interconnected.
 
 What is the difference between the HashTable and HashMap?
 Answer:
+HashMap is non synchronized. It is not-thread safe and can't be shared between many threads without proper synchronization code.
+Hashtable is synchronized. It is thread-safe and can be shared with many threads.
 
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model
 Answer:
+Array of structures is used majorly in RDBMS.
+Graph is mostly used in Network data model
+Trees is used for Hierarchical data model
+
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
 Answer:
+HashMap uses equals() to compare the key whether the are equal or not. If equals() method return true, they are equal otherwise not equal. A single bucket can have more than one nodes, it depends on hashCode() method. The better your hashCode() method is, the better your buckets will be utilized.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
 Answer:
+The array index out of bounds error is a special case of the buffer overflow error. It occurs when the index used to address array items exceeds the allowed value.
 
 What are the different ways of copying an array into another array?
 Answer:
+we can copy an array to another array by Using variable assignment or by creating a new array of the same length and copy each element.
 
 What is DFS and BFS?
 Answer:
+BFS is Breadth-First Search while the full form of DFS is Depth First Search. BFS uses a queue to keep track of the next location to visit.
+whereas DFS uses a stack to keep track of the next location to visit.
 
 What is Recursion?
 Answer:
+Recursion is a technique used to solve computer problems by creating a function that calls itself until your program achieves the desired result.
 
 What are linear and non-linear data Structures?
 Answer:
-
-
+In Linear data elements are arranged sequentially or linearly where the elements are attached to its previous and next adjacent
+Non-linear data elements are not arranged sequentially or linearly.
 Outline different sorting algorithms and their time complexities:
-
-
+1-Selection Sort Ω(n^2)
+2-Insertion Sort Ω(n)
+3-Quick Sort Ω(n log(n)
+4-Merge Sort Ω(n log(n))
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a) In terms of Accessing elements:
   b) In terms of Inserting elements:
