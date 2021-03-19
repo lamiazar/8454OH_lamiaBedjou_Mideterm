@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo  {
 
     /*
     This class should implement the Employee interface. You can do that by directly implementing it, however you must
