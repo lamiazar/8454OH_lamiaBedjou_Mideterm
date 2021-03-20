@@ -9,7 +9,6 @@ public class CollectionView {
          Map is created and some data is inserted into it.
          Retrieve the Collection view of the values present in map
          */
-
         HashMap<Integer, String> map = new HashMap<Integer, String>();
         map.put(1, "NYC");
         map.put(2, "LA");
@@ -17,7 +16,9 @@ public class CollectionView {
         map.put(4, "Boston");
         map.put(5, "San Jose");
         map.put(6, "Seattle");
+        for(HashMap.Entry<Integer, String> m: map.entrySet()){
+            System.out.println("Collection view " + m.getKey() +" " + m.getValue());
 
     }
 
-}
+}}

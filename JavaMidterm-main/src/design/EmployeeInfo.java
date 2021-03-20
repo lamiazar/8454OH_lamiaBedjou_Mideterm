@@ -2,65 +2,57 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo  {
-
-    /*
-    This class should implement the Employee interface. You can do that by directly implementing it, however you must
-        also implement the Employee interface into an abstract class. So create an Abstract class then inherit that
-        abstract class into this EmployeeInfo class. Once you're done with designing EmployeeInfo class,
-        go to FortuneEmployee class to apply all the fields and attributes.
-
-    Important: YOU MUST USE:
-        - OOP (Abstraction, Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
-        - Use all kind of keywords (super, this, static, final, etc)
-        - Implement nested class below (DateConversion)
-        - Use Exception Handling
-     */
-
-    /*
-     * Make sure to declare and use static, non-static & final fields
-     */
+public class EmployeeInfo  extends AbsEmployee implements Employee {
     static String companyName;
+    private static double salary;
+    private static double bonus;
+    private static double numYearEmployment;
+    private String department;
+    private int id;
+    private String benefit;
+    private int wage;
 
-    /*
-     You must implement the logic for below 2 methods and
-        following 2 methods are prototype as well for other methods need to be design,
-        as you will come up with the new ideas.
-     */
-
-    /*
-     You must have/use multiple constructors
-     */
-    public EmployeeInfo(int employeeId) {
+    public EmployeeInfo() {
 
     }
-
-    public EmployeeInfo(String name, int employeeId) {
+    public EmployeeInfo(String name, String companyName) {
+        super(name);
+    }
+    public EmployeeInfo(String name, String address, int numberOfhours, String benefit, int empId) {
+        this.name="lamia";
+        this.address="504 Dier rd,Ohio";
 
     }
-
-    /*
-     You need to implement the logic of this method as such:
-        It should calculate Employee bonus based on salary and performance.
-        It should return the total yearly bonus.
-            Example: 10% of salary for best performance, 8% of salary for average performance and so on.
-            You can set arbitrary number for performance, so you probably need to send 2 arguments.
-     *
-     */
-    public static int calculateEmployeeBonus(int numberOfYearsWithCompany) {
-        int total = 0;
-        return total;
+    @Override
+    public void meeting() {
+        System.out.println("I participate in daily meetings");
     }
 
-    /*
-     You need to implement the logic of this method as such:
-        It should calculate Employee pension based on salary and numbers of years with the company.
-        It should return the total pension amount.
-            Example: Employee will receive 5% of salary as pension for every year they are with the company
-     *
-     */
-    public static int calculateEmployeePension() {
-        int total = 0;
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    public  void vacation(){
+        System.out.println("I have a 15 days payed vacation");
+    }
+
+    public static double calculateEmployeeBonus(double salary, int numYearEmployment) {
+     bonus=0;
+    if (numYearEmployment>= 10) {
+       bonus = salary* 0.10;
+        System.out.println("I'm getting a bonus of : "+bonus);
+    } else if (numYearEmployment >= 5 &&(numYearEmployment<10)) {
+        bonus = salary*00.5;
+        System.out.println("I'm getting a bonus of : "+bonus);
+    } else {
+       bonus = 0;
+       System.out.println("Bonus is not applied");
+    }
+		return bonus;
+}
+    public static double calculateEmployeePension() {
+        double result = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter start date in format (example: May,2015): ");
         String joiningDate = sc.nextLine();
@@ -68,18 +60,46 @@ public class EmployeeInfo  {
         String todaysDate = sc.nextLine();
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
-
-        // Figure out how to extract the number of years the employee has been with the company, using the above 2 dates
-        // Calculate pension
-
-        return total;
+        int startDate=Integer.parseInt(joiningDate);
+        int nowDate=Integer.parseInt(todaysDate);
+        numYearEmployment=nowDate-startDate;
+        if (numYearEmployment > 3) {
+            result = (salary * 0.20);
+        } else if (numYearEmployment == 2) {
+            result = (salary * 0.10);
+        } else if (numYearEmployment == 1) {
+            result =(salary * 0.05);
+        } else if (numYearEmployment == 0) {
+            result = 0;
+        }
+        return result;
+    }
+    @Override
+    public void assignDepartment() {
+        System.out.println(department);
     }
 
-    private static class DateConversion {
+    @Override
+    public int employeeId() {
+        return id;
+    }
 
-        public DateConversion(Months months) {
-        }
+    @Override
+    public String employeeName() {
+        return name;
+    }
 
+    @Override
+    public int calculateSalary() {
+        return (int) (numberOfhours*wage*52);
+    }
+
+    @Override
+    public void benefitLayout() {
+        System.out.println(benefit);
+    }
+}
+  class DateConversion {
         public static String convertDate(String date) {
             String[] extractMonth = date.split(",");
             String givenMonth = extractMonth[0];
@@ -87,7 +107,6 @@ public class EmployeeInfo  {
             String actualDate = monthDate + "/" + extractMonth[1];
             return actualDate;
         }
-
         public static int whichMonth(String givenMonth) {
             Months months = Months.valueOf(givenMonth);
             int date = 0;
@@ -136,4 +155,4 @@ public class EmployeeInfo  {
 
         }
     }
-}
+

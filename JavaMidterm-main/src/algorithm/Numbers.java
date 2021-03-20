@@ -48,13 +48,26 @@ public class Numbers {
          By following the same convention we used for Selection Sort, continue to do the same for all remaining sorting
             algorithms
          */
-
-
         /*
         Can you come to conclusion about which sorting algorithm is most efficient, given the size of the data set?
          */
 
+
+        //BubbleSort
+        algo.bubbleSort(num);
+        long  bubbleSortExecutionTime= algo.executionTime;
+        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+                + bubbleSortExecutionTime + " milliseconds");
+
+       //BucketSort
+        randomize(num, n);
+        algo.bucketSort(num, 1000000);
+        long  bucketSortExecutionTime= algo.executionTime;
+        System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort took: "
+                + bucketSortExecutionTime + " milliseconds");
+
     }
+
 
 
 
