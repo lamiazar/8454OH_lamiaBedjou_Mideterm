@@ -9,6 +9,8 @@ public class FortuneEmployee {
         e.vacation();
         EmployeeInfo.calculateEmployeeBonus(75.000,5);
         EmployeeInfo.calculateEmployeePension();
+        System.out.println(e.generateEmailAddress());
+
     }
 
 }

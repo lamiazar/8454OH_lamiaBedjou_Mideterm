@@ -7,5 +7,11 @@ public class UnitTestingEmployeeInfo {
     EmployeeInfo e=new EmployeeInfo();
         System.out.println(e.isFullTimeEmployee(36));
         System.out.println(e.getNumberOfhours(40));
+        System.out.println(e.isFullTimeEmployee(36));
+        System.out.println(e.getNumberOfhours(40));
+        e.vacation();
+        EmployeeInfo.calculateEmployeeBonus(75.000,5);
+        EmployeeInfo.calculateEmployeePension();
+        System.out.println(e.generateEmailAddress());
     }
 }

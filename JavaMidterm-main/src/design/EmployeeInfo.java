@@ -1,19 +1,20 @@
 package design;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class EmployeeInfo  extends AbsEmployee implements Employee {
-    static String companyName;
+public class EmployeeInfo  extends EmployeeAbstract implements Employee {
+    static String companyName="Honda R&d Americas";
     private static double salary;
     private static double bonus;
     private static double numYearEmployment;
-    private String department;
+    String department;
     private int id;
     private String benefit;
     private int wage;
+    String emailAddress;
 
     public EmployeeInfo() {
-
     }
     public EmployeeInfo(String name, String companyName) {
         super(name);
@@ -37,6 +38,10 @@ public class EmployeeInfo  extends AbsEmployee implements Employee {
         System.out.println("I have a 15 days payed vacation");
     }
 
+    String generateEmailAddress() {
+        emailAddress = name.toLowerCase()+ "@" + department.toLowerCase() + "." + companyName.toLowerCase() + ".com";
+        return emailAddress;
+    }
     public static double calculateEmployeeBonus(double salary, int numYearEmployment) {
      bonus=0;
     if (numYearEmployment>= 10) {
@@ -51,6 +56,7 @@ public class EmployeeInfo  extends AbsEmployee implements Employee {
     }
 		return bonus;
 }
+
     public static double calculateEmployeePension() {
         double result = 0;
         Scanner sc = new Scanner(System.in);
@@ -74,21 +80,19 @@ public class EmployeeInfo  extends AbsEmployee implements Employee {
         }
         return result;
     }
+
     @Override
     public void assignDepartment() {
-        System.out.println(department);
+        this.department="IT";
     }
-
     @Override
     public int employeeId() {
         return id;
     }
-
     @Override
     public String employeeName() {
         return name;
     }
-
     @Override
     public int calculateSalary() {
         return (int) (numberOfhours*wage*52);
@@ -96,7 +100,7 @@ public class EmployeeInfo  extends AbsEmployee implements Employee {
 
     @Override
     public void benefitLayout() {
-        System.out.println(benefit);
+        System.out.println("As a full Time employee I have all the benefits");
     }
 }
   class DateConversion {

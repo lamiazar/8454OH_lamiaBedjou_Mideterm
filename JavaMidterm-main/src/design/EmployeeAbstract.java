@@ -1,27 +1,27 @@
 package design;
 
-public abstract class AbsEmployee {
+public abstract class EmployeeAbstract {
   String name;
   String address;
   int numberOfhours;
   private int ssn;
   private static double salary;
 
-    public AbsEmployee(String name) {
+    public EmployeeAbstract(String name) {
         this.name = name;
     }
 
-    public AbsEmployee(String name, String address) {
+    public EmployeeAbstract(String name, String address) {
         this.name = name;
         this.address = address;
     }
 
-    public AbsEmployee(String name, String address, int numberOfhours) {
+    public EmployeeAbstract(String name, String address, int numberOfhours) {
         this.name = name;
         this.address = address;
         this.numberOfhours = numberOfhours;
     }
-    public AbsEmployee(){
+    public EmployeeAbstract(){
 
     }
     public boolean isFullTimeEmployee(int numberOfhours){
