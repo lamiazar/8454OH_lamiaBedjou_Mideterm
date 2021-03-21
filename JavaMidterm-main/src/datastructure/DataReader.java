@@ -1,5 +1,14 @@
 package datastructure;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
+
 public class DataReader {
 
     public static void main(String[] args) {
@@ -19,7 +28,45 @@ public class DataReader {
          */
 
         String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+        FileReader fileReader=null;;
+        BufferedReader bufferedReader=null;
+        String data = "";
+        String addData="";
+        try {
+            fileReader = new FileReader(textFile);
+            bufferedReader = new BufferedReader(fileReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            while ((data = bufferedReader.readLine()) != null) {
+                addData=addData+data;
+                System.out.println(data);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try{
+                fileReader.close();
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        List<String> l = new LinkedList<>();
+        Random rand = new Random();
+        for (int i = 1; i < 27; i++) {
+           l.add("Almost");
+           l.add("done");
+           l.add("with");
+           l.add("javaCourse");
+        }
+        Iterator<String> iterator= l.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next());
+        }
 
-    }
 
-}
+
+    }}
+

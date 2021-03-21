@@ -16,7 +16,7 @@ public class CsvReader {
          You need to find the average score of the class.
          */
 
-        //The Score of the class would be the average score of each student divided but the number of students
+
 
 
         String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
@@ -65,6 +65,15 @@ public class CsvReader {
             }
 
         }
+        //The Score of the class would be the average score of each student divided but the number of students
+        int numberOfStudent = roster.size();
+        int answers = 0;
+        double result=0;
+        for (Trainee students: roster) {
+            answers+=students.getNumberOfExercisesSolved();
+        }
+        result=answers/numberOfStudent;
+        System.out.println("The score of the class is "+result);
 
     }
 }

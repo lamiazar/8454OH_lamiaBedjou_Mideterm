@@ -25,4 +25,5 @@ public class UseArrayList {
         array.stream().forEach(System.out::println);
         int retrieve=array.get(3);
         System.out.println("we retrieved: "+retrieve);
+
     }}
