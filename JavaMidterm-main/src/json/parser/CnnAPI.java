@@ -52,6 +52,7 @@ public class CnnAPI {
         JSONObject rootObject = new JSONObject(new String(Files.readAllBytes(new File("src/json/parser/data.json").toPath())));
 
         // Continue implementing here..
+
     }
 
 }
