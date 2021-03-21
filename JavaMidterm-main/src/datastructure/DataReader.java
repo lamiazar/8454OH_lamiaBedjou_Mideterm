@@ -31,7 +31,6 @@ public class DataReader {
         FileReader fileReader=null;;
         BufferedReader bufferedReader=null;
         String data = "";
-        String addData="";
         try {
             fileReader = new FileReader(textFile);
             bufferedReader = new BufferedReader(fileReader);
@@ -40,7 +39,6 @@ public class DataReader {
         }
         try {
             while ((data = bufferedReader.readLine()) != null) {
-                addData=addData+data;
                 System.out.println(data);
             }
         } catch (IOException e) {

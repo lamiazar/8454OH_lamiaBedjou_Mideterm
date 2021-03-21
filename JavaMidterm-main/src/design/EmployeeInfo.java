@@ -1,6 +1,5 @@
 package design;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class EmployeeInfo  extends EmployeeAbstract implements Employee {
@@ -24,6 +23,13 @@ public class EmployeeInfo  extends EmployeeAbstract implements Employee {
         this.address="504 Dier rd,Ohio";
 
     }
+    public static double getBonus() {
+        return bonus;
+    }
+    public int getId() {
+        return id;
+    }
+
     @Override
     public void meeting() {
         System.out.println("I participate in daily meetings");
