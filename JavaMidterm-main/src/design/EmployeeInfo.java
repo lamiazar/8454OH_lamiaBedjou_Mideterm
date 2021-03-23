@@ -2,13 +2,14 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo  extends EmployeeAbstract implements Employee {
+public class EmployeeInfo  extends AbstractClass implements Employee {
+
     static String companyName="Honda R&d Americas";
     private static double salary;
     private static double bonus;
     private static double numYearEmployment;
     String department;
-    private int id;
+    private int employeeId;
     private String benefit;
     private int wage;
     String emailAddress;
@@ -25,9 +26,6 @@ public class EmployeeInfo  extends EmployeeAbstract implements Employee {
     }
     public static double getBonus() {
         return bonus;
-    }
-    public int getId() {
-        return id;
     }
 
     @Override
@@ -54,7 +52,7 @@ public class EmployeeInfo  extends EmployeeAbstract implements Employee {
        bonus = salary* 0.10;
         System.out.println("I'm getting a bonus of : "+bonus);
     } else if (numYearEmployment >= 5 &&(numYearEmployment<10)) {
-        bonus = salary*00.5;
+        bonus = salary*00.8;
         System.out.println("I'm getting a bonus of : "+bonus);
     } else {
        bonus = 0;
@@ -86,15 +84,24 @@ public class EmployeeInfo  extends EmployeeAbstract implements Employee {
         }
         return result;
     }
-
     @Override
     public void assignDepartment() {
-        this.department="IT";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your department: ");
+        String department = scanner.nextLine();
+        if (name==null){
+            System.out.println("Please enter your name : ");
+            String name = scanner.nextLine();
+            System.out.println(name+ " is assigned to " + department);
+            this.name = name;
+        } else{
+            System.out.println(name + " is assigned to" + department);}
     }
-    @Override
+        @Override
     public int employeeId() {
-        return id;
+        return employeeId;
     }
+
     @Override
     public String employeeName() {
         return name;

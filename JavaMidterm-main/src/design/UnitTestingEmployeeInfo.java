@@ -11,7 +11,7 @@ public class UnitTestingEmployeeInfo {
         System.out.println(e.getNumberOfhours(40));
         e.vacation();
         EmployeeInfo.calculateEmployeeBonus(75.000,5);
+        e.assignDepartment();
         EmployeeInfo.calculateEmployeePension();
-        System.out.println(e.generateEmailAddress());
     }
 }

@@ -1,8 +1,8 @@
 package datastructure;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import databases.ConnectToSqlDB;
+
+import java.util.*;
 
 public class UseArrayList {
 
@@ -25,5 +25,10 @@ public class UseArrayList {
         array.stream().forEach(System.out::println);
         int retrieve=array.get(3);
         System.out.println("we retrieved: "+retrieve);
+        Collections.sort(array);
+        ConnectToSqlDB connect=new ConnectToSqlDB();
+        connect.insertDataFromArrayListToSqlTable(array,"Array","SortingNumbers");
+        array.add(8,84);
+        array.add(9,87);
 
     }}

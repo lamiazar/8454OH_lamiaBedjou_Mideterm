@@ -1,5 +1,7 @@
 package datastructure;
 
+import databases.ConnectToSqlDB;
+
 import java.util.*;
 
 public class UseQueue {
@@ -15,7 +17,14 @@ public class UseQueue {
         Queue<String> q = new LinkedList<>();
         q.add("Anis");
         q.add("Belhak");
-        System.out.println(q);
+        q.add("Rayan");
+        q.add("Lamia");
+        q.add("Rahim");
+        q.add("Sam");
+        q.add("rosie");
+        q.remove();
+        System.out.println("The head of this queue is: "+q.peek());
+
         q.poll();
 
         Iterator it = q.iterator() ;
@@ -23,8 +32,11 @@ public class UseQueue {
             System.out.println(it.next());
         }
 
-        System.out.println(q.remove("Anis"));
-        System.out.println(q);
+        q.remove("Anis");
+        q.poll();
+        for(String queue : q) {
+            System.out.print(queue + " ");
+        }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -37,6 +49,7 @@ public class UseQueue {
         System.out.println("Queue values are: " +queue);
         Integer head = queue.peek();
         System.out.println("Head of the queue is: " + head);
+
     }
 
 }

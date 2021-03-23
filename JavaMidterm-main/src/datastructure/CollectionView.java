@@ -17,7 +17,7 @@ public class CollectionView {
         map.put(5, "San Jose");
         map.put(6, "Seattle");
         for(HashMap.Entry<Integer, String> m: map.entrySet()){
-            System.out.println("The result is : " + m.getKey() +" " + m.getValue());
+            System.out.println("The result is : " + m.getKey() +" --->" + m.getValue());
 
     }
 

@@ -1,5 +1,7 @@
 package design;
 
+import databases.ConnectToSqlDB;
+
 public class FortuneEmployee {
 
     public static void main(String[] args) {
@@ -10,6 +12,9 @@ public class FortuneEmployee {
         EmployeeInfo.calculateEmployeeBonus(75.000,5);
         EmployeeInfo.calculateEmployeePension();
         System.out.println(e.generateEmailAddress());
+        e.assignDepartment();
+        ConnectToSqlDB dt = new ConnectToSqlDB();
+        ConnectToSqlDB.readUserProfileFromSqlTable();
 
     }
 

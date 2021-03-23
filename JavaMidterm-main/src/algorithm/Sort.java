@@ -52,6 +52,7 @@ public class Sort {
 
         return array;
     }
+    //*******************************************************************************************************//
   //Bubble Sort
     public int[] bubbleSort(int[] array) {
         final long startTime = System.currentTimeMillis();
@@ -89,5 +90,15 @@ public class Sort {
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return sortedArray;
+    }
+
+    public int[]heapSort(int[] array) {
+        int[] list = array;
+        return list;
+    }
+
+    public int[] mergeSort(int[] array) {
+        int[] list = array;
+        return list;
     }
 }
